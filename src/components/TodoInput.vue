@@ -1,7 +1,11 @@
 <template>
   <div class="inputBox shadow">
-    <input type="text" v-model="newTodoItem" v-on:keyup.enter="addTodo" />
-    <span class="addContainer" v-on:click="addTodo">
+    <input
+      type="text"
+      v-model="newTodoItem"
+      v-on:keyup.enter="addNewTodoItem"
+    />
+    <span class="addContainer" v-on:click="addNewTodoItem">
       <i class="fas fa-plus addButton"></i>
     </span>
   </div>
@@ -16,10 +20,9 @@ export default {
   },
 
   methods: {
-    addTodo: function () {
+    addNewTodoItem: function () {
       if (this.newTodoItem !== '') {
-        const obj = { isCompleted: false, item: this.newTodoItem };
-        localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+        this.$emit('addNewTodoItem', this.newTodoItem);
         this.clearInput();
       }
     },
@@ -38,6 +41,7 @@ export default {
   line-height: 50px;
 
   input {
+    width: 75%;
     border-style: none;
     font-size: 0.9rem;
 

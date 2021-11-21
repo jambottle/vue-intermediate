@@ -1,14 +1,14 @@
 <template>
   <div class="clearAllContainer">
-    <span class="clearAllButton" v-on:click="clearTodo">Clear All</span>
+    <span class="clearAllButton" v-on:click="clearTodoItems">Clear All</span>
   </div>
 </template>
 
 <script>
 export default {
   methods: {
-    clearTodo: function () {
-      localStorage.clear();
+    clearTodoItems: function () {
+      this.$emit('clearTodoItems');
     },
   },
 };

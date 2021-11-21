@@ -8,12 +8,12 @@
       <i
         class="fas fa-check checkButton"
         v-bind:class="{ checkButtonCompleted: todoItem.isCompleted }"
-        v-on:click="toggleComplete(todoItem)"
+        v-on:click="toggleComplete(todoItem, index)"
       ></i>
       <span v-bind:class="{ textCompleted: todoItem.isCompleted }">
         {{ todoItem.item }}
       </span>
-      <span class="removeButton" v-on:click="removeTodo(todoItem, index)">
+      <span class="removeButton" v-on:click="removeTodoItem(todoItem, index)">
         <i class="fas fa-trash-alt"></i>
       </span>
     </li>
@@ -22,34 +22,15 @@
 
 <script>
 export default {
-  data() {
-    return {
-      todoItems: [],
-    };
-  },
+  props: ['todoItems'],
 
   methods: {
-    removeTodo: function (todoItem, index) {
-      localStorage.removeItem(todoItem);
-      this.todoItems.splice(index, 1);
+    toggleComplete: function (todoItem, index) {
+      this.$emit('toggleComplete', todoItem, index);
     },
-    toggleComplete: function (todoItem) {
-      todoItem.isCompleted = !todoItem.isCompleted;
-      localStorage.removeItem(todoItem.item);
-      localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
+    removeTodoItem: function (todoItem, index) {
+      this.$emit('removeTodoItem', todoItem, index);
     },
-  },
-
-  created() {
-    if (localStorage.length > 0) {
-      for (let i = 0; i < localStorage.length; i++) {
-        if (localStorage.key(i) !== 'loglevel:webpack-dev-server') {
-          this.todoItems.push(
-            JSON.parse(localStorage.getItem(localStorage.key(i)))
-          );
-        }
-      }
-    }
   },
 };
 </script>
