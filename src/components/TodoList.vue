@@ -58,7 +58,7 @@ export default {
 ul {
   list-style-type: none;
   margin-top: 0;
-  padding-left: 50px;
+  padding-inline-start: 0;
   text-align: left;
 
   li {
@@ -67,12 +67,12 @@ ul {
     min-height: 50px;
     margin: 0.5rem 0;
     border-radius: 5px;
-    padding: 0 0.9rem;
+    padding: 0 1rem;
     background-color: white;
     line-height: 50px;
 
     .checkButton {
-      margin-right: 5px;
+      margin-right: 10px;
       color: #62acde;
       line-height: 45px;
 
