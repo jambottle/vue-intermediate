@@ -56,10 +56,7 @@ ul {
       margin-right: 10px;
       color: #62acde;
       line-height: 45px;
-
-      &:hover {
-        cursor: pointer;
-      }
+      cursor: pointer;
     }
 
     .checkButtonCompleted {
@@ -74,10 +71,7 @@ ul {
     .removeButton {
       margin-left: auto;
       color: #de4343;
-
-      &:hover {
-        cursor: pointer;
-      }
+      cursor: pointer;
     }
   }
 }

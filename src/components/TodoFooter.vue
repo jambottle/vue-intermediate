@@ -22,6 +22,7 @@ export default {
   background-color: white;
   border-radius: 5px;
   margin: 0 auto;
+  cursor: pointer;
 
   .clearAllButton {
     color: #e20303;
@@ -31,7 +32,6 @@ export default {
 
   &:hover {
     background-color: #fadcd9;
-    cursor: pointer;
   }
 }
 </style>
