@@ -3,7 +3,7 @@
     <input
       type="text"
       v-model="newTodoItem"
-      v-on:keyup.enter="addNewTodoItem"
+      v-on:keypress.enter="addNewTodoItem"
     />
     <span class="addContainer" v-on:click="addNewTodoItem">
       <i class="fas fa-plus addButton"></i>
@@ -56,15 +56,19 @@ export default {
 
 <style lang="scss" scoped>
 .inputBox {
+  position: relative;
   height: 50px;
   border-radius: 5px;
   background-color: white;
   line-height: 50px;
 
   input {
-    width: 75%;
+    position: absolute;
+    top: 15px;
+    left: 2rem;
+    width: 90%;
     border-style: none;
-    font-size: 0.9rem;
+    font-size: 1rem;
 
     &:focus {
       outline: none;
@@ -72,7 +76,9 @@ export default {
   }
 
   .addContainer {
-    float: right;
+    position: absolute;
+    right: 0;
+    z-index: 1;
     display: block;
     width: 3rem;
     border-radius: 0 5px 5px 0;

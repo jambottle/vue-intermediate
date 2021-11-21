@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <transition-group name="list" tag="ul">
     <li
       v-for="(todoItem, index) in todoItems"
       v-bind:key="todoItem.item"
@@ -17,7 +17,7 @@
         <i class="fas fa-trash-alt"></i>
       </span>
     </li>
-  </ul>
+  </transition-group>
 </template>
 
 <script>
@@ -38,7 +38,7 @@ export default {
 <style lang="scss" scoped>
 ul {
   list-style-type: none;
-  margin-bottom: 0.5rem;
+  margin: 0.6rem auto 0.75rem;
   padding-inline-start: 0;
   text-align: left;
 
@@ -74,5 +74,17 @@ ul {
       cursor: pointer;
     }
   }
+}
+
+/* 리스트 아이템 트랜지션 효과 */
+.list-enter-active,
+.list-leave-active {
+  transition: all 1s;
+}
+
+.list-enter,
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
 }
 </style>
