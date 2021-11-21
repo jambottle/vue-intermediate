@@ -70,13 +70,20 @@ export default {
 
 <style>
 body {
-  text-align: center;
   background-color: #f6f6f6;
+  text-align: center;
+}
+
+div,
+ul {
+  width: 75%;
+  min-width: 320px;
+  margin: 0 auto;
 }
 
 input {
+  min-width: 110px;
   border-style: groove;
-  min-width: 200px;
 }
 
 button {

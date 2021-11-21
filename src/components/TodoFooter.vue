@@ -30,6 +30,7 @@ export default {
   }
 
   &:hover {
+    background-color: #fadcd9;
     cursor: pointer;
   }
 }

@@ -38,7 +38,7 @@ export default {
 <style lang="scss" scoped>
 ul {
   list-style-type: none;
-  margin-top: 0;
+  margin-bottom: 0.5rem;
   padding-inline-start: 0;
   text-align: left;
 
