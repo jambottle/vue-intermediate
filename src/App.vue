@@ -46,21 +46,21 @@ export default {
   },
 
   methods: {
-    addNewTodoItem: function (newTodoItem) {
+    addNewTodoItem(newTodoItem) {
       const obj = { isCompleted: false, item: newTodoItem };
       localStorage.setItem(newTodoItem, JSON.stringify(obj));
       this.todoItems.push(obj);
     },
-    toggleComplete: function (todoItem, index) {
+    toggleComplete(todoItem, index) {
       this.todoItems[index].isCompleted = !this.todoItems[index].isCompleted;
       localStorage.removeItem(todoItem.item);
       localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
     },
-    removeTodoItem: function (todoItem, index) {
+    removeTodoItem(todoItem, index) {
       localStorage.removeItem(todoItem.item);
       this.todoItems.splice(index, 1);
     },
-    clearTodoItems: function () {
+    clearTodoItems() {
       localStorage.clear();
       this.todoItems = [];
     },

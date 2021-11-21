@@ -7,7 +7,7 @@
 <script>
 export default {
   methods: {
-    clearTodoItems: function () {
+    clearTodoItems() {
       this.$emit('clearTodoItems');
     },
   },

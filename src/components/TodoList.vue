@@ -25,10 +25,10 @@ export default {
   props: ['todoItems'],
 
   methods: {
-    toggleComplete: function (todoItem, index) {
+    toggleComplete(todoItem, index) {
       this.$emit('toggleComplete', todoItem, index);
     },
-    removeTodoItem: function (todoItem, index) {
+    removeTodoItem(todoItem, index) {
       this.$emit('removeTodoItem', todoItem, index);
     },
   },
