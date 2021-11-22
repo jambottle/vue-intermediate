@@ -1,7 +1,7 @@
 <template>
   <transition-group name="list" tag="ul">
     <li
-      v-for="(todoItem, index) in todoItems"
+      v-for="(todoItem, index) in this.$store.state.todoItems"
       v-bind:key="todoItem.item"
       class="shadow"
     >
@@ -22,14 +22,12 @@
 
 <script>
 export default {
-  props: ['todoItems'],
-
   methods: {
     toggleComplete(todoItem, index) {
-      this.$emit('toggleComplete', todoItem, index);
+      this.$store.commit('toggleComplete', { todoItem, index });
     },
     removeTodoItem(todoItem, index) {
-      this.$emit('removeTodoItem', todoItem, index);
+      this.$store.commit('removeTodoItem', { todoItem, index });
     },
   },
 };

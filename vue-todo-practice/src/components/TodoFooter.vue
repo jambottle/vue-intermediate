@@ -8,7 +8,7 @@
 export default {
   methods: {
     clearTodoItems() {
-      this.$emit('clearTodoItems');
+      this.$store.commit('clearTodoItems');
     },
   },
 };
@@ -18,16 +18,15 @@ export default {
 .clearAllContainer {
   width: 8.5rem;
   height: 50px;
-  line-height: 50px;
-  background-color: white;
-  border-radius: 5px;
   margin: 0 auto;
+  border-radius: 5px;
+  background-color: white;
+  line-height: 50px;
   cursor: pointer;
 
   .clearAllButton {
-    color: #e20303;
-    /* 추가 */
     display: block;
+    color: #e20303;
   }
 
   &:hover {
