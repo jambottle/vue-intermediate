@@ -5,11 +5,11 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
   methods: {
-    clearTodoItems() {
-      this.$store.commit('clearTodoItems');
-    },
+    ...mapMutations(['clearTodoItems']),
   },
 };
 </script>
